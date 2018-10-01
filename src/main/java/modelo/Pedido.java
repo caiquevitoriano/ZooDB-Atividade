@@ -6,8 +6,11 @@
 package modelo;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
+import javax.jdo.Extent;
 import org.zoodb.api.impl.ZooPC;
 
 /**
@@ -18,12 +21,11 @@ public class Pedido extends ZooPC {
 
     private int codigo;
     private Cliente cliente;
-    private List<ItemPedido> itens;
-    
+    private Set<ItemPedido> itens = new HashSet<ItemPedido>();
 
     @SuppressWarnings("unused")
     public Pedido() {
-        
+
     }
 
     public int getCodigo() {
@@ -46,26 +48,22 @@ public class Pedido extends ZooPC {
         this.cliente = cliente;
     }
 
-    public List<ItemPedido> getItens() {
-        zooActivateRead();
+    public Set<ItemPedido> getItens() {
         return itens;
     }
 
-    public void setItens(List<ItemPedido> itens) {
-        zooActivateWrite();
+    public void setItens(Set<ItemPedido> itens) {
         this.itens = itens;
-    }   
-    
-    
-    public float calcularTotal(){
-        return 0;
-        
-            
-            
-            
- 
     }
+
     
-    
+
+    public float calcularTotal() {
+        return 0;
+
+
+    }
+
+
 
 }
