@@ -13,13 +13,17 @@ import org.zoodb.api.impl.ZooPC;
  */
 public class Cliente extends ZooPC {
 
-    private int codigo;
-    private String nome;
-    
+    int codigo;
+    String nome;
 
     @SuppressWarnings("unused")
     public Cliente() {
 
+    }
+
+    public Cliente(int codigo, String nome) {
+        this.codigo = codigo;
+        this.nome = nome;
     }
 
     public int getCodigo() {

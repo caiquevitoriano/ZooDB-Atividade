@@ -9,14 +9,20 @@ package modelo;
  *
  * @author caique
  */
-public class PessoaJuridica extends Cliente{
-    
+public class PessoaJuridica extends Cliente {
+
     private String cnpj;
     private float limiteCredido;
 
     @SuppressWarnings("unused")
     public PessoaJuridica() {
-        
+
+    }
+
+    public PessoaJuridica(String cnpj, float limiteCredido, int codigo, String nome) {
+        super(codigo, nome);
+        this.cnpj = cnpj;
+        this.limiteCredido = limiteCredido;
     }
 
     public String getCnpj() {
@@ -38,7 +44,5 @@ public class PessoaJuridica extends Cliente{
         zooActivateWrite();
         this.limiteCredido = limiteCredido;
     }
-    
-    
-    
+
 }

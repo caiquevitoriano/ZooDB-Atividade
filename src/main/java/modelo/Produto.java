@@ -22,6 +22,10 @@ public class Produto extends ZooPC {
 
     }
 
+    public Produto(int i, String computador, int i0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public int getCodigo() {
         zooActivateRead();
         return codigo;

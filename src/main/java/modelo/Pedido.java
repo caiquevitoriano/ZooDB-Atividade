@@ -28,6 +28,10 @@ public class Pedido extends ZooPC {
 
     }
 
+    public Pedido(int i, PessoaJuridica cliente1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public int getCodigo() {
         zooActivateRead();
         return codigo;
@@ -49,21 +53,23 @@ public class Pedido extends ZooPC {
     }
 
     public Set<ItemPedido> getItens() {
-        return itens;
+        return itens; 
     }
 
-    public void setItens(Set<ItemPedido> itens) {
-        this.itens = itens;
+    public void addItens(ItemPedido item) {
+        zooActivateWrite();
+        itens.add(item);
     }
-
-    
 
     public float calcularTotal() {
-        return 0;
+        zooActivateRead();
+        float total = 0;
 
+        for (ItemPedido item : itens) {
+            total += item.calculaSubtotal();
+        }
 
+        return total;
     }
-
-
 
 }

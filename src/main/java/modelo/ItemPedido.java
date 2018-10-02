@@ -22,6 +22,10 @@ public class ItemPedido extends ZooPC {
 
     }
 
+    public ItemPedido(int i, int i0, Produto p1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public int getCodigo() {
         zooActivateRead();
         return codigo;
